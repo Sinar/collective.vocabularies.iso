@@ -9,5 +9,9 @@
         name="collective.vocabularies.iso.countries"
     />
 
+    <utility
+        component=".currencies.CurrenciesFactory"
+        name="collective.vocabularies.iso.currencies"
+    />
 
 </configure>

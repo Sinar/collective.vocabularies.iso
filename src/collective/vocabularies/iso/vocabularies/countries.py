@@ -8,15 +8,35 @@ from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+import pycountry
 
-from p01.vocabulary.country import ISO3166Alpha2CountryVocabulary
 
 @implementer(IVocabularyFactory)
 class Countries(object):
     """
     """
 
+    def make_terms(self, items):
+        """ Create zope.schame terms from tuples """
+        terms = [SimpleTerm(
+                             value=triplet[0],
+                             token=triplet[1],
+                             title=triplet[2])
+
+                 for triplet in items]
+
+        return terms
+
     def __call__(self, context):
-        return ISO3166Alpha2CountryVocabulary(context)
+
+        countries = []
+
+        for country in list(pycountry.countries):
+            countries.append((country.alpha_2, country.numeric, country.name))
+
+        terms = self.make_terms(countries)
+
+        return SimpleVocabulary(terms)
+
 
 CountriesFactory = Countries()

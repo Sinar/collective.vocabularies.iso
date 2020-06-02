@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="collective.vocabularies.iso">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <utility
+        component=".countries.CountriesFactory"
+        name="collective.vocabularies.iso.Countries"
+    />
+
+
+</configure>

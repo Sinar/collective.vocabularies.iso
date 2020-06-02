@@ -6,7 +6,7 @@
 
     <utility
         component=".countries.CountriesFactory"
-        name="collective.vocabularies.iso.Countries"
+        name="collective.vocabularies.iso.countries"
     />
 
 

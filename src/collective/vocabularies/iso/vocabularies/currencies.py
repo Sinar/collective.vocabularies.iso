@@ -32,8 +32,8 @@ class Currencies(object):
         currencies = []
 
         for currency in list(pycountry.currencies):
-            currency.append((currency.alpha_3, currency.numeric,
-                             currency.name))
+            currencies.append((currency.alpha_3, currency.numeric,
+                              currency.name))
 
         terms = self.make_terms(currencies)
 

@@ -54,7 +54,7 @@ setup(
         'plone.api>=1.8.4',
         'plone.restapi',
         'plone.app.dexterity',
-        'pycountry',
+        'pycountry==19.8.18',
     ],
     extras_require={
         'test': [

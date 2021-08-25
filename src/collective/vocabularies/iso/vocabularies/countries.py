@@ -32,8 +32,11 @@ class Countries(object):
         countries = []
 
         for country in list(pycountry.countries):
-            countries.append((country.alpha_2, country.numeric, country.name))
-
+            if hasattr(country, "common_name"):
+                countries.append((country.alpha_2, country.numeric, country.common_name))
+            else:
+                countries.append((country.alpha_2, country.numeric, country.name))
+        
         terms = self.make_terms(countries)
 
         return SimpleVocabulary(terms)

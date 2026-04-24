@@ -34,8 +34,7 @@ class TestSetup(unittest.TestCase):
 
     def test_browserlayer(self):
         """Test that ICollectiveVocabulariesIsoLayer is registered."""
-        from collective.vocabularies.iso.interfaces import (
-            ICollectiveVocabulariesIsoLayer)
+        from collective.vocabularies.iso.interfaces import ICollectiveVocabulariesIsoLayer
         from plone.browserlayer import utils
         self.assertIn(
             ICollectiveVocabulariesIsoLayer,
@@ -64,8 +63,7 @@ class TestUninstall(unittest.TestCase):
 
     def test_browserlayer_removed(self):
         """Test that ICollectiveVocabulariesIsoLayer is removed."""
-        from collective.vocabularies.iso.interfaces import \
-            ICollectiveVocabulariesIsoLayer
+        from collective.vocabularies.iso.interfaces import ICollectiveVocabulariesIsoLayer
         from plone.browserlayer import utils
         self.assertNotIn(
             ICollectiveVocabulariesIsoLayer,
